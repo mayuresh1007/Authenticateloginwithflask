@@ -6,7 +6,7 @@ app = Flask(__name__)
 def auth_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
-        # check and see authorization is authorization is correct
+        # check and see authorization in authorization is correct
         auth = request.authorization
         if auth and auth.username == 'username' and auth.password == 'password':
             return f(*args,**kwargs)
